@@ -10,6 +10,7 @@ import {
   Sliders,
   Gauge,
   Code,
+  Palette,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
@@ -38,6 +39,12 @@ const Sidebar = ({ activeTab, isMobileMenuOpen, isMobile, onClose }) => {
       label: "Image to JPG",
       icon: <FileImage className="w-5 h-5" />,
       description: "Convert to JPG",
+    },
+    {
+      id: "image-to-grayscale",
+      label: "Image to Grayscale",
+      icon: <Palette className="w-5 h-5" />,
+      description: "Convert images to grayscale",
     },
     {
       id: "remove-bg",

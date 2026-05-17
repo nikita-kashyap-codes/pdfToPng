@@ -9,6 +9,7 @@ import RemoveBg from "./pages/RemoveBg";
 import RotateFlip from "./pages/RotateFlip";
 import ImageCompress from "./pages/ImageCompress";
 import ImageDpi from "./pages/ImageDpi";
+import ImageGrayScale from "./pages/ImageGrayScale";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/pdf-to-png" element={<PdfPng />} />
         <Route path="/image-to-webp" element={<ImageWebp />} />
         <Route path="/image-to-jpg" element={<ImageJpg />} />
+        <Route path="/image-to-grayscale" element={<ImageGrayScale />} />
         <Route path="/remove-bg" element={<RemoveBg />} />
         <Route path="/rotate-flip" element={<RotateFlip />} />
         <Route path="/image-compress" element={<ImageCompress />} />
