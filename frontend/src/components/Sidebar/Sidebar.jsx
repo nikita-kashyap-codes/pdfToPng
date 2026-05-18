@@ -65,12 +65,6 @@ const Sidebar = ({ activeTab, isMobileMenuOpen, isMobile, onClose }) => {
       description: "Rotate or flip images",
     },
     {
-      id: "image-compress",
-      label: "Image Compressor",
-      icon: <Sliders className="w-5 h-5" />,
-      description: "Compress images",
-    },
-    {
       id: "image-dpi",
       label: "Image DPI Converter",
       icon: <Gauge className="w-5 h-5" />,
