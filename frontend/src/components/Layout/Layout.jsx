@@ -1,19 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, Outlet } from "react-router-dom";
 import Sidebar from "../Sidebar/Sidebar";
- feature/pdf-tools
-import { Outlet, useLocation } from "react-router-dom";
-
-import PdfPng from "../../pages/PdfPng";
-import ImageWebp from "../../pages/ImageWbp";
-import ImageJpg from "../../pages/ImageJpg";
-import RemoveBg from "../../pages/RemoveBg";
-import ImageUpscale from "../../pages/ImageUpscale";
-import ImageCompress from "../../pages/ImageCompress";
-import RotateFlip from "../../pages/RotateFlip";
-import ImageBase64 from "../../pages/ImageBase64";
-import ImageGrayScale from "../../pages/ImageGrayScale";
-main
 import { Menu } from "lucide-react";
 
 const Layout = () => {
@@ -21,10 +8,6 @@ const Layout = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const location = useLocation();
- feature/pdf-tools
-
-  const activePath = location.pathname.substring(1);
- main
 
   useEffect(() => {
     const handleResize = () => {
@@ -40,13 +23,8 @@ const Layout = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   return (
     <div className="flex h-screen bg-gray-50 overflow-hidden">
@@ -68,18 +46,13 @@ const Layout = () => {
                 <Menu className="w-6 h-6" />
               </button>
 
-              <h1 className="text-lg font-semibold text-blue-400">
-                pdfToPng
-              </h1>
+              <h1 className="text-lg font-semibold text-blue-400">pdfToPng</h1>
 
-              <div className="w-10"></div>
+              <div className="w-10" />
             </div>
           </header>
         )}
-feature/pdf-tools
 
-
- main
         <div className="min-h-full flex justify-center items-center py-8">
           <Outlet />
         </div>
