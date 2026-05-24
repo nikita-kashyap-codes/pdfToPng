@@ -1,20 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
-import "./ScrollToTop.css";
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Show button when page is scrolled up to given distance
   const toggleVisibility = () => {
-    if (window.scrollY > 200) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
+    setIsVisible(window.scrollY > 200);
   };
 
-  // Scroll to top smoothly
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -24,6 +17,7 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", toggleVisibility);
+    toggleVisibility();
 
     return () => {
       window.removeEventListener("scroll", toggleVisibility);
@@ -31,15 +25,15 @@ const ScrollToTop = () => {
   }, []);
 
   return (
-    <div className="scroll-to-top-container">
+    <div className="fixed bottom-8 right-8 z-50 pointer-events-none sm:bottom-6 sm:right-6">
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="scroll-to-top-button"
+          className="pointer-events-auto inline-flex items-center justify-center rounded-full w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 text-white shadow-xl shadow-indigo-500/20 transition-transform duration-300 ease-in-out hover:-translate-y-1 active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-300"
           aria-label="Scroll to top"
           title="Scroll to top"
         >
-          <ArrowUp className="scroll-to-top-icon" size={24} />
+          <ArrowUp className="h-6 w-6 animate-bounce" />
         </button>
       )}
     </div>
