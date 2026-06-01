@@ -1,4 +1,5 @@
 import fitz  # PyMuPDF
+import base64  
 
 from flask import Blueprint, request
 
@@ -62,6 +63,14 @@ def convert_pdf_to_png():
         finally:
             if doc:
                 doc.close()
+            
+        if request.form.get("response_type") == "base64":
+            base64_string = base64.b64encode(png_bytes).decode("utf-8")
+            return {
+                "success": True,
+                "message": "Image encoded successfully.",
+                "image_data": f"data:image/png;base64,{base64_string}"
+            }
 
         return send_file_and_cleanup(
             png_bytes,
