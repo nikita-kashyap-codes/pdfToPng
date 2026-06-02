@@ -779,7 +779,7 @@ const ToolCard = ({ tool, index }) => (
     <div
       className={`absolute inset-0 rounded-2xl bg-linear-to-br ${tool.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10`}
     />
-    <div className="w-full h-[80px] flex items-center justify-center mb-6 relative">
+    <div className="w-full h-20 flex items-center justify-center mb-6 relative">
       {toolAnimations[tool.id] ?? (
         <div
           className={`w-14 h-14 rounded-xl bg-linear-to-br ${tool.iconGradient} p-px tc-icon-float`}
