@@ -39,15 +39,7 @@ function ImageCompress() {
   };
 
   const onSuccess = (responseBlob, originalFileName) => {
-    console.log("onSuccess called!");
-    console.log("Response blob size:", responseBlob.size);
-    console.log("Original size:", originalSize);
-    
-    // Update converted size state
-    setConvertedSize(responseBlob.size);
-    
-    alert(`Compression complete!\nOriginal: ${originalSize} bytes\nConverted: ${responseBlob.size} bytes`);
-    
+    setConvertedSize(responseBlob.size);    
     return `Success! Image compressed with ${quality}% quality.`;
   };
 
